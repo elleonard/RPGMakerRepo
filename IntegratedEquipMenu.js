@@ -239,6 +239,13 @@ Window_IntegratedEquipMenu.prototype.makeCommandList = function() {
 	if (this.maxItems() === 0) this.addCommand('None', 'none');
 };
 
+Window_IntegratedEquipMenu.prototype.commandSymbol = function (index) {
+	if (this._list.length <= 0) {
+		return null;
+	}
+	return Window_Command.prototype.commandSymbol.call(this, index);
+};
+
 //=============================================================
 // -1 = must short format (no params)
 // 0 = concise format (params, no diff)
